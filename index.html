@@ -154,6 +154,7 @@
     @media(max-width:1000px){.console{grid-template-columns:1fr}.side-console{position:relative;top:0}.specimen.active-specimen{grid-template-columns:1fr}.specimen .bench{grid-column:1;grid-row:auto}.specimen h3,.specimen p{grid-column:1}.specimen-nav{grid-template-columns:repeat(6,1fr)}}
     @media(max-width:620px){.specimen{padding:24px 18px}.specimen .bench{min-height:350px!important;padding:32px!important;border-radius:38px}.lab-button.art-button{width:260px!important;height:230px!important}.specimen-nav{grid-template-columns:repeat(4,1fr)}.art-hero{width:140px!important;height:140px!important;right:2vw!important;top:390px!important}}
 
+    [data-action="avoid"]{transition:left .16s ease,top .16s ease!important}
 </style>
 </head>
 <body>
@@ -259,7 +260,7 @@
       const bench=b.parentElement,br=bench.getBoundingClientRect();
       b.style.position='absolute';
       const spots=[[18,18],[Math.max(18,br.width-b.offsetWidth-18),18],[18,Math.max(18,br.height-b.offsetHeight-18)],[Math.max(18,br.width-b.offsetWidth-18),Math.max(18,br.height-b.offsetHeight-18)]];
-      spots.sort((a,z)=>Math.hypot(br.left+a[0]+b.offsetWidth/2-e.clientX,br.top+a[1]+b.offsetHeight/2-e.clientY)-Math.hypot(br.left+z[0]+b.offsetWidth/2-e.clientX,br.top+z[1]+b.offsetHeight/2-e.clientY));
+      spots.sort((a,z)=>Math.hypot(br.left+z[0]+b.offsetWidth/2-e.clientX,br.top+z[1]+b.offsetHeight/2-e.clientY)-Math.hypot(br.left+a[0]+b.offsetWidth/2-e.clientX,br.top+a[1]+b.offsetHeight/2-e.clientY));
       b.style.left=spots[0][0]+'px';b.style.top=spots[0][1]+'px';
     });
 
