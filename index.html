@@ -104,41 +104,19 @@
     @media(max-width:620px){.lab-button.art-button{width:200px!important;height:164px!important}.art-hero{width:125px!important;height:125px!important}.art-hero .button-face{width:125px;height:125px}}
 
 
-    /* v6 palette + tactile motion */
-    .specimen{background:#2d3027}.lab{background:#25271f}.side-console{background:#171913}
-    .specimen:nth-child(3n+1) .button-face{animation:softFloat 4.8s ease-in-out infinite}
-    .specimen:nth-child(3n+2) .button-face{animation:softTilt 5.6s ease-in-out infinite}
-    .specimen:nth-child(3n) .button-face{animation:softPulse 4.2s ease-in-out infinite}
-    .art-button:hover .button-face{animation-play-state:paused}
-    @keyframes softFloat{50%{transform:translateY(-5px)}}@keyframes softTilt{50%{transform:rotate(2.5deg)}}@keyframes softPulse{50%{transform:scale(1.025)}}
-    @media(prefers-reduced-motion:reduce){.button-face{animation:none!important}}
 
-
-    /* v7 — remove crop boxes and make every motion behavioral. */
-    .bench{overflow:visible!important;background:transparent!important;border:0!important;min-height:205px!important}
-    .specimen{overflow:visible!important}
-    .button-face{animation:none!important}
-    .art-button.reacting[data-action="complete"] .button-face{animation:completeStamp .52s cubic-bezier(.2,1.55,.35,1)!important}
-    .art-button.reacting[data-action="applause"] .button-face{animation:applauseClap .72s ease!important}
-    .art-button.reacting[data-action="clone"] .button-face{animation:cloneSplit .65s ease!important}
-    .art-button.reacting[data-action="undo"] .button-face{animation:undoTurn .7s cubic-bezier(.2,.8,.3,1)!important}
-    .art-button.reacting[data-action="dot"] .button-face{animation:dotRelease .62s ease!important}
-    .art-button.reacting[data-action="labels"] .button-face{animation:labelCrisis .58s steps(3)!important}
-    .art-button.reacting[data-action="tiny"] .button-face{animation:tinyShrink .7s ease!important}
-    .art-button.reacting[data-action="important"] .button-face{animation:importantAlarm .8s ease!important}
-    .art-button[data-action="wait"]:disabled .button-face{animation:waitingBreath 1.25s ease-in-out infinite!important}
-    .art-button[data-action="hold"]:active .button-face{animation:holdStill 1.8s linear!important}
-    @keyframes completeStamp{0%{transform:scale(1)}45%{transform:scale(.78) translateY(9px)}70%{transform:scale(1.08) translateY(-4px)}100%{transform:scale(1)}}
-    @keyframes applauseClap{0%,100%{transform:rotate(0)}20%{transform:rotate(-7deg) scale(1.08)}40%{transform:rotate(7deg) scale(.96)}60%{transform:rotate(-5deg) scale(1.06)}80%{transform:rotate(4deg)}}
-    @keyframes cloneSplit{0%,100%{filter:drop-shadow(0 10px 0 #050812)}45%{transform:translateX(-12px);filter:drop-shadow(24px 2px 0 #f58caf88) drop-shadow(-3px 10px 0 #050812)}}
-    @keyframes undoTurn{0%{transform:rotate(0)}55%{transform:rotate(-22deg) scale(.9)}100%{transform:rotate(0)}}
-    @keyframes dotRelease{0%{transform:scale(1)}45%{transform:scale(.82)}62%{transform:scale(1.14)}100%{transform:scale(1)}}
-    @keyframes labelCrisis{0%{transform:translateX(0)}25%{transform:translateX(-7px) skewX(-5deg)}50%{transform:translateX(8px) skewX(6deg)}75%{transform:translateX(-4px)}100%{transform:translateX(0)}}
-    @keyframes tinyShrink{0%,100%{transform:scale(1)}60%{transform:scale(.58)}}
-    @keyframes importantAlarm{0%,100%{transform:scale(1)}20%,60%{transform:scale(1.11) rotate(3deg)}40%,80%{transform:scale(1.11) rotate(-3deg)}}
-    @keyframes waitingBreath{50%{transform:scale(.93);opacity:.72}}
-    @keyframes holdStill{to{transform:scale(.9)}}
-    @media(prefers-reduced-motion:reduce){.art-button .button-face{animation:none!important}}
+    /* v8 — uncropped artwork and behavior-led interactions only. */
+    .lab,.console,.specimens,.specimen,.bench,.lab-button.art-button{overflow:visible!important;clip-path:none!important;mask:none!important}
+    .bench{background:transparent!important;border:0!important;min-height:225px!important;padding:12px!important}
+    .lab-button.art-button{width:250px!important;height:210px!important;max-width:100%!important;background:transparent!important;border:0!important;box-shadow:none!important}
+    .lab-button.art-button .button-face{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;animation:none!important;filter:none!important;transform:none}
+    .art-button:hover,.art-button:active{box-shadow:none!important;rotate:0!important}
+    .art-button:hover .button-face{transform:none!important;filter:none!important}
+    .art-button:active .button-face{transform:scale(.985)!important}
+    .art-hero{overflow:visible!important;clip-path:none!important}.art-hero .button-face{object-fit:contain!important;filter:none!important}
+    /* The interaction itself is the animation: escape, confetti, cloning, page drama,
+       countdown, hold ring, released dots, relabeling, page shrink, and finale. */
+    @media(max-width:620px){.lab-button.art-button{width:220px!important;height:190px!important}.bench{padding:18px 4px!important}}
 
 </style>
 </head>
@@ -211,16 +189,6 @@
     const hold=document.querySelector('[data-action="hold"]');hold.addEventListener('pointerdown',()=>{if(hold.closest('.locked'))return;hold.parentElement.classList.add('holding');state.hold=setTimeout(()=>{hold.parentElement.classList.remove('holding');record('hold');buttonLabel(hold).textContent='CEREMONY ✓'},1800)});['pointerup','pointerleave','pointercancel'].forEach(ev=>hold.addEventListener(ev,()=>{clearTimeout(state.hold);hold.parentElement.classList.remove('holding')}));
     document.querySelector('#sound-toggle').onclick=async e=>{state.sound=!state.sound;e.currentTarget.classList.toggle('on',state.sound);e.currentTarget.textContent='GENTLE LAB SOUNDS / '+(state.sound?'ON':'OFF');if(state.sound){tone(392,.25);setTimeout(()=>tone(523,.3),140)}};
     document.querySelector('#close-finale').onclick=()=>finale.classList.remove('show');
-
-    // Behavior-specific motion; no decorative idle animation.
-    grid.addEventListener('click',e=>{
-      const b=e.target.closest('.art-button[data-action]');
-      if(!b||b.closest('.locked')||b.dataset.action==='avoid')return;
-      b.classList.remove('reacting');
-      void b.offsetWidth;
-      b.classList.add('reacting');
-      setTimeout(()=>b.classList.remove('reacting'),900);
-    });
 
   </script>
 </body>
