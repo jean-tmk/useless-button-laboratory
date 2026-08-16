@@ -118,6 +118,42 @@
        countdown, hold ring, released dots, relabeling, page shrink, and finale. */
     @media(max-width:620px){.lab-button.art-button{width:220px!important;height:190px!important}.bench{padding:18px 4px!important}}
 
+
+    /* v9 — single-specimen studio, no covering lock cards. */
+    .lab{overflow:visible!important;background:
+      radial-gradient(circle at 12% 18%,#f58caf55 0 12%,transparent 12.4%),
+      radial-gradient(circle at 88% 10%,#e8d66d66 0 15%,transparent 15.4%),
+      radial-gradient(circle at 78% 80%,#aeba8f66 0 20%,transparent 20.4%),
+      linear-gradient(135deg,#fffaf0 0 68%,#f1eadc 68%);color:var(--ink)}
+    .lab:before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 79px,#25271f0b 80px)}
+    .lab-intro{position:relative;z-index:1;margin-bottom:36px}.lab-intro small{color:#8f2f5a}.lab-intro p{color:#4f5545}
+    .console{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:18px;align-items:start}
+    .specimen-nav{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,1fr);gap:6px;padding:9px;border:1px solid #25271f;background:#fffaf0;box-shadow:7px 7px 0 #25271f}
+    .specimen-tab{min-width:0;padding:11px 3px;border:0;border-right:1px solid #25271f33;background:transparent;color:var(--ink);font:650 9px Syne;cursor:pointer;transition:.18s}.specimen-tab:last-child{border-right:0}.specimen-tab:hover{background:#f58caf44}.specimen-tab.active{background:#25271f;color:#fffaf0}.specimen-tab.locked-tab{opacity:.46}.specimen-tab.locked-tab:after{content:' ·';color:#b83f70}
+    .specimens{display:block!important}
+    .specimen{display:none!important;min-height:590px;padding:38px 42px;border:1px solid #25271f;background:#fffaf0;box-shadow:12px 12px 0 #aeba8f;overflow:visible!important}
+    .specimen.active-specimen{display:grid!important;grid-template-columns:minmax(250px,.78fr) minmax(390px,1.22fr);grid-template-rows:auto 1fr;column-gap:36px;align-items:start}
+    .specimen:before{display:none}.specimen.locked{filter:none;opacity:1}.specimen.locked:after{display:none!important}
+    .specimen header{grid-column:1/-1;color:#626957;border-bottom:1px solid #25271f;padding-bottom:14px}
+    .specimen h3{grid-column:1;margin:48px 0 15px;font-size:clamp(2.7rem,5vw,5.7rem);color:var(--ink)}
+    .specimen p{grid-column:1;min-height:0;font-size:10px;color:#59604e}
+    .specimen.locked p:after{content:'  This specimen is still sealed. Keep testing earlier buttons to activate it.';color:#a43c67}
+    .specimen .bench{grid-column:2;grid-row:2/4;position:relative;min-height:430px!important;margin:28px 0 0;display:grid;place-items:center;padding:52px!important;border-radius:48% 52% 44% 56%;background:radial-gradient(circle at center,#fff 0 22%,#f6d6e1 22.5% 43%,#dfe6d1 43.5% 67%,#e8d66d55 67.5%)!important}
+    .lab-button.art-button{width:320px!important;height:280px!important;max-width:100%!important}
+    .stage-controls{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+    .stage-controls button{padding:12px 16px;border:1px solid #25271f;background:#fffaf0;color:#25271f;font-size:8px;letter-spacing:.08em;cursor:pointer;box-shadow:4px 4px 0 #25271f}.stage-controls button:hover{background:#e8d66d}
+    .side-console{position:sticky;top:18px;background:#59633d;color:#fffaf0;border:1px solid #25271f;box-shadow:9px 9px 0 #f58caf}
+    .side-console>header,.chaos{border-color:#fffaf044}.log p{color:#fffaf0;border-color:#fffaf022}.empty-log{color:#d8ddcc!important}.sound-toggle{color:#fffaf0;border-color:#fffaf066}
+    .hero{overflow:visible!important}.art-hero{width:210px!important;height:210px!important;right:5vw!important;top:95px!important}.art-hero .button-face{width:100%!important;height:100%!important;object-fit:contain!important}
+    body.dramatic:before{content:'';position:fixed;z-index:80;inset:-20%;pointer-events:none;background:conic-gradient(from 90deg,#000 0 20%,#b83f70 20% 28%,#000 28% 48%,#e8d66d 48% 53%,#000 53% 100%);mix-blend-mode:multiply;animation:dramaLights 2.8s ease both}
+    body.dramatic:after{content:'DRAMA';position:fixed;z-index:81;inset:0;display:grid;place-items:center;pointer-events:none;color:#fffaf0;text-shadow:8px 8px 0 #b83f70;font:750 clamp(6rem,20vw,18rem)/1 Syne;letter-spacing:-.08em;animation:dramaTitle 2.8s ease both}
+    body.dramatic main{animation:dramaticScene 2.8s cubic-bezier(.2,.8,.2,1)}
+    @keyframes dramaLights{0%,100%{opacity:0;rotate:0deg}12%{opacity:.94}70%{opacity:.82;rotate:18deg}90%{opacity:.2}}
+    @keyframes dramaTitle{0%,12%{opacity:0;transform:scale(2.4) rotate(-9deg)}28%{opacity:1;transform:scale(1) rotate(2deg)}72%{opacity:1;transform:scale(1.07) rotate(-1deg)}100%{opacity:0;transform:scale(.2) rotate(16deg)}}
+    @keyframes dramaticScene{0%,100%{filter:none}15%{filter:contrast(1.8) saturate(1.7);transform:scale(1.025)}28%{transform:translateX(-9px) rotate(-.4deg)}35%{transform:translateX(9px) rotate(.4deg)}45%{transform:translateX(0)}70%{filter:contrast(1.25) saturate(1.25)}}
+    @media(max-width:1000px){.console{grid-template-columns:1fr}.side-console{position:relative;top:0}.specimen.active-specimen{grid-template-columns:1fr}.specimen .bench{grid-column:1;grid-row:auto}.specimen h3,.specimen p{grid-column:1}.specimen-nav{grid-template-columns:repeat(6,1fr)}}
+    @media(max-width:620px){.specimen{padding:24px 18px}.specimen .bench{min-height:350px!important;padding:32px!important;border-radius:38px}.lab-button.art-button{width:260px!important;height:230px!important}.specimen-nav{grid-template-columns:repeat(4,1fr)}.art-hero{width:140px!important;height:140px!important;right:2vw!important;top:390px!important}}
+
 </style>
 </head>
 <body>
@@ -185,10 +221,48 @@
     function confetti(origin){for(let i=0;i<18;i++){const d=document.createElement('i');d.className='dot';d.style.setProperty('--x',(Math.random()-.5)*240+'px');d.style.setProperty('--y',(Math.random()-.5)*150+'px');d.style.left='50%';d.style.top='50%';origin.append(d);setTimeout(()=>d.remove(),1500)}}
     document.querySelector('.hero-button').onclick=()=>{record('hero');document.querySelector('.hero-button span').textContent=pick(['STILL NOTHING','AGAIN?','CONFIRMED','WHY THOUGH?'])};
     grid.addEventListener('pointerover',e=>{const b=e.target.closest('[data-action="avoid"]');if(!b)return;const bench=b.parentElement,r=bench.getBoundingClientRect();b.style.position='absolute';b.style.left=Math.random()*Math.max(10,r.width-b.offsetWidth)+'px';b.style.top=Math.random()*Math.max(10,r.height-b.offsetHeight)+'px'});
-    grid.addEventListener('click',e=>{const b=e.target.closest('[data-action]');if(!b||b.closest('.locked'))return;const action=b.dataset.action;if(action==='avoid'){record(action,'The Avoidant Button escaped before formal testing.');return}if(action==='complete'){buttonLabel(b).textContent='COMPLETE ✓';record(action)}if(action==='applause'){record(action);confetti(b.parentElement);tone(523,.1);setTimeout(()=>tone(659,.13),100)}if(action==='clone'){const c=b.cloneNode(true);buttonLabel(c).textContent=pick(['ANOTHER BUTTON','MORE','EXTRA','WHY NOT']);c.classList.add('clone');c.style.left=Math.random()*55+'%';c.style.top=Math.random()*55+'%';b.parentElement.append(c);record(action)}if(action==='drama'){document.body.classList.add('dramatic');setTimeout(()=>document.body.classList.remove('dramatic'),900);record(action)}if(action==='wait'){b.disabled=true;let n=3;buttonLabel(b).textContent='WAIT '+n+'…';const timer=setInterval(()=>{n--;buttonLabel(b).textContent=n?'WAIT '+n+'…':'…';if(!n){clearInterval(timer);setTimeout(()=>{b.disabled=false;buttonLabel(b).textContent='THAT WAS IT';record(action)},700)}},650)}if(action==='undo'){record(action)}if(action==='dot'){confetti(b.parentElement);record(action)}if(action==='labels'){document.querySelectorAll('.lab-button').forEach(x=>{const l=buttonLabel(x);l.dataset.old=l.textContent;l.textContent=pick(['MAYBE','BUTTON?','PROBABLY','UNTITLED','DO THING'])});setTimeout(()=>document.querySelectorAll('.lab-button').forEach(x=>{const l=buttonLabel(x);l.textContent=l.dataset.old||l.textContent}),1600);record(action)}if(action==='tiny'){document.querySelector('main').classList.toggle('tiny');record(action)}if(action==='important'){record(action);finale.classList.add('show');tone(392,.4,'triangle');setTimeout(()=>tone(523,.5,'triangle'),180)}});
+    grid.addEventListener('click',e=>{const b=e.target.closest('[data-action]');if(!b||b.closest('.locked'))return;const action=b.dataset.action;if(action==='avoid'){record(action,'The Avoidant Button escaped before formal testing.');return}if(action==='complete'){buttonLabel(b).textContent='COMPLETE ✓';record(action)}if(action==='applause'){record(action);confetti(b.parentElement);tone(523,.1);setTimeout(()=>tone(659,.13),100)}if(action==='clone'){const c=b.cloneNode(true);buttonLabel(c).textContent=pick(['ANOTHER BUTTON','MORE','EXTRA','WHY NOT']);c.classList.add('clone');c.style.left=Math.random()*55+'%';c.style.top=Math.random()*55+'%';b.parentElement.append(c);record(action)}if(action==='drama'){document.body.classList.add('dramatic');setTimeout(()=>document.body.classList.remove('dramatic'),2800);record(action)}if(action==='wait'){b.disabled=true;let n=3;buttonLabel(b).textContent='WAIT '+n+'…';const timer=setInterval(()=>{n--;buttonLabel(b).textContent=n?'WAIT '+n+'…':'…';if(!n){clearInterval(timer);setTimeout(()=>{b.disabled=false;buttonLabel(b).textContent='THAT WAS IT';record(action)},700)}},650)}if(action==='undo'){record(action)}if(action==='dot'){confetti(b.parentElement);record(action)}if(action==='labels'){document.querySelectorAll('.lab-button').forEach(x=>{const l=buttonLabel(x);l.dataset.old=l.textContent;l.textContent=pick(['MAYBE','BUTTON?','PROBABLY','UNTITLED','DO THING'])});setTimeout(()=>document.querySelectorAll('.lab-button').forEach(x=>{const l=buttonLabel(x);l.textContent=l.dataset.old||l.textContent}),1600);record(action)}if(action==='tiny'){document.querySelector('main').classList.toggle('tiny');record(action)}if(action==='important'){record(action);finale.classList.add('show');tone(392,.4,'triangle');setTimeout(()=>tone(523,.5,'triangle'),180)}});
     const hold=document.querySelector('[data-action="hold"]');hold.addEventListener('pointerdown',()=>{if(hold.closest('.locked'))return;hold.parentElement.classList.add('holding');state.hold=setTimeout(()=>{hold.parentElement.classList.remove('holding');record('hold');buttonLabel(hold).textContent='CEREMONY ✓'},1800)});['pointerup','pointerleave','pointercancel'].forEach(ev=>hold.addEventListener(ev,()=>{clearTimeout(state.hold);hold.parentElement.classList.remove('holding')}));
     document.querySelector('#sound-toggle').onclick=async e=>{state.sound=!state.sound;e.currentTarget.classList.toggle('on',state.sound);e.currentTarget.textContent='GENTLE LAB SOUNDS / '+(state.sound?'ON':'OFF');if(state.sound){tone(392,.25);setTimeout(()=>tone(523,.3),140)}};
     document.querySelector('#close-finale').onclick=()=>finale.classList.remove('show');
+
+    // Reframe the collection as one generous testing stage.
+    const specimenCards=[...grid.querySelectorAll('.specimen')];
+    const specimenNav=document.createElement('div');
+    specimenNav.className='specimen-nav';
+    const stageControls=document.createElement('div');
+    stageControls.className='stage-controls';
+    stageControls.innerHTML='<button type="button" data-stage="prev">← PREVIOUS SPECIMEN</button><span id="stage-position">01 / 12</span><button type="button" data-stage="next">NEXT SPECIMEN →</button>';
+    grid.before(specimenNav);
+    grid.after(stageControls);
+    let activeSpecimen=0;
+    specimenCards.forEach((card,i)=>{
+      const tab=document.createElement('button');
+      tab.type='button';tab.className='specimen-tab';tab.textContent=String(i+1).padStart(2,'0');
+      tab.addEventListener('click',()=>showSpecimen(i));
+      specimenNav.append(tab);
+    });
+    function refreshSpecimenTabs(){[...specimenNav.children].forEach((tab,i)=>tab.classList.toggle('locked-tab',specimenCards[i].classList.contains('locked')))}
+    function showSpecimen(i){activeSpecimen=(i+specimenCards.length)%specimenCards.length;specimenCards.forEach((card,n)=>card.classList.toggle('active-specimen',n===activeSpecimen));[...specimenNav.children].forEach((tab,n)=>tab.classList.toggle('active',n===activeSpecimen));document.querySelector('#stage-position').textContent=String(activeSpecimen+1).padStart(2,'0')+' / 12';}
+    stageControls.addEventListener('click',e=>{const d=e.target.dataset.stage;if(d)showSpecimen(activeSpecimen+(d==='next'?1:-1))});
+    new MutationObserver(refreshSpecimenTabs).observe(grid,{subtree:true,attributes:true,attributeFilter:['class']});
+    refreshSpecimenTabs();showSpecimen(0);
+
+    // The avoidant specimen reacts before the pointer reaches it.
+    let avoidCooldown=0;
+    document.addEventListener('pointermove',e=>{
+      const b=document.querySelector('[data-action="avoid"]');
+      if(!b||!b.closest('.active-specimen')||b.closest('.locked'))return;
+      const r=b.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+      if(Math.hypot(e.clientX-cx,e.clientY-cy)>240||Date.now()<avoidCooldown)return;
+      avoidCooldown=Date.now()+150;
+      const bench=b.parentElement,br=bench.getBoundingClientRect();
+      b.style.position='absolute';
+      const spots=[[18,18],[Math.max(18,br.width-b.offsetWidth-18),18],[18,Math.max(18,br.height-b.offsetHeight-18)],[Math.max(18,br.width-b.offsetWidth-18),Math.max(18,br.height-b.offsetHeight-18)]];
+      spots.sort((a,z)=>Math.hypot(br.left+a[0]+b.offsetWidth/2-e.clientX,br.top+a[1]+b.offsetHeight/2-e.clientY)-Math.hypot(br.left+z[0]+b.offsetWidth/2-e.clientX,br.top+z[1]+b.offsetHeight/2-e.clientY));
+      b.style.left=spots[0][0]+'px';b.style.top=spots[0][1]+'px';
+    });
+
 
   </script>
 </body>
