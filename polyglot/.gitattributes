@@ -1,0 +1,57 @@
+polyglot/languages/php/.php linguist-detectable=true linguist-language=PHP
+polyglot/languages/algol/module.alg linguist-detectable=true linguist-language=ALGOL
+polyglot/languages/aiken/module.ak linguist-detectable=true linguist-language=Aiken
+polyglot/languages/aspectj/module.aj linguist-detectable=true linguist-language=AspectJ
+polyglot/languages/basic/module.bas linguist-detectable=true linguist-language=BASIC
+polyglot/languages/bitbake/module.bb linguist-detectable=true linguist-language=BitBake
+polyglot/languages/c/module.c linguist-detectable=true linguist-language=C
+polyglot/languages/cue/module.cue linguist-detectable=true linguist-language=CUE
+polyglot/languages/ceylon/module.ceylon linguist-detectable=true linguist-language=Ceylon
+polyglot/languages/click/module.click linguist-detectable=true linguist-language=Click
+polyglot/languages/crystal/module.cr linguist-detectable=true linguist-language=Crystal
+polyglot/languages/digital-command-language/module.com linguist-detectable=true linguist-language=DIGITAL Command Language
+polyglot/languages/dogescript/module.djs linguist-detectable=true linguist-language=Dogescript
+polyglot/languages/elixir/mix.lock linguist-detectable=true linguist-language=Elixir
+polyglot/languages/firrtl/module.fir linguist-detectable=true linguist-language=FIRRTL
+polyglot/languages/flix/module.flix linguist-detectable=true linguist-language=Flix
+polyglot/languages/gaml/module.gaml linguist-detectable=true linguist-language=GAML
+polyglot/languages/genero-4gl/module.4gl linguist-detectable=true linguist-language=Genero 4gl
+polyglot/languages/gno/module.gno linguist-detectable=true linguist-language=Gno
+polyglot/languages/hlsl/module.hlsl linguist-detectable=true linguist-language=HLSL
+polyglot/languages/hyphy/module.bf linguist-detectable=true linguist-language=HyPhy
+polyglot/languages/ink/module.ink linguist-detectable=true linguist-language=Ink
+polyglot/languages/jsoniq/module.jq linguist-detectable=true linguist-language=JSONiq
+polyglot/languages/jison-lex/module.jisonlex linguist-detectable=true linguist-language=Jison Lex
+polyglot/languages/kakounescript/kakrc.txt linguist-detectable=true linguist-language=KakouneScript
+polyglot/languages/langium/module.langium linguist-detectable=true linguist-language=Langium
+polyglot/languages/linker-script/ld.script linguist-detectable=true linguist-language=Linker Script
+polyglot/languages/lookml/module.lkml linguist-detectable=true linguist-language=LookML
+polyglot/languages/mql4/module.mq4 linguist-detectable=true linguist-language=MQL4
+polyglot/languages/meson/meson.build linguist-detectable=true linguist-language=Meson
+polyglot/languages/module-management-system/descrip.mmk linguist-detectable=true linguist-language=Module Management System
+polyglot/languages/myghty/module.myt linguist-detectable=true linguist-language=Myghty
+polyglot/languages/netlinx-erb/module.axs.erb linguist-detectable=true linguist-language=NetLinx+ERB
+polyglot/languages/numpy/module.numpy linguist-detectable=true linguist-language=NumPy
+polyglot/languages/odin/module.odin linguist-detectable=true linguist-language=Odin
+polyglot/languages/overpy/module.opy linguist-detectable=true linguist-language=OverPy
+polyglot/languages/pov-ray-sdl/module.pov linguist-detectable=true linguist-language=POV-Ray SDL
+polyglot/languages/perl/.latexmkrc linguist-detectable=true linguist-language=Perl
+polyglot/languages/powerbuilder/module.pbt linguist-detectable=true linguist-language=PowerBuilder
+polyglot/languages/purebasic/module.pb linguist-detectable=true linguist-language=PureBasic
+polyglot/languages/quickbasic/module.bas linguist-detectable=true linguist-language=QuickBASIC
+polyglot/languages/raku/module.6pl linguist-detectable=true linguist-language=Raku
+polyglot/languages/renderscript/module.rs linguist-detectable=true linguist-language=RenderScript
+polyglot/languages/smt/module.smt2 linguist-detectable=true linguist-language=SMT
+polyglot/languages/scilab/module.sci linguist-detectable=true linguist-language=Scilab
+polyglot/languages/slice/module.ice linguist-detectable=true linguist-language=Slice
+polyglot/languages/stan/module.stan linguist-detectable=true linguist-language=Stan
+polyglot/languages/tl-verilog/module.tlv linguist-detectable=true linguist-language=TL-Verilog
+polyglot/languages/teal/module.tl linguist-detectable=true linguist-language=Teal
+polyglot/languages/unix-assembly/module.s linguist-detectable=true linguist-language=Unix Assembly
+polyglot/languages/vala/module.vala linguist-detectable=true linguist-language=Vala
+polyglot/languages/webassembly/module.wast linguist-detectable=true linguist-language=WebAssembly
+polyglot/languages/xquery/module.xquery linguist-detectable=true linguist-language=XQuery
+polyglot/languages/zap/module.zap linguist-detectable=true linguist-language=ZAP
+polyglot/languages/jq/module.jq linguist-detectable=true linguist-language=jq
+polyglot/languages/xbase/module.prg linguist-detectable=true linguist-language=xBase
+polyglot/majority/exhibit_registry.php linguist-detectable=true linguist-language=PHP
